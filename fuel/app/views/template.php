@@ -16,6 +16,8 @@
 	<?php echo Html::anchor('user/index', '用户管理', array('class' => 'btn btn-success')); ?>
 	<?php echo Html::anchor('login/index', '账号管理', array('class' => 'btn btn-success')); ?>
 	<?php echo Html::anchor('operate_record/index', '操作日志', array('class' => 'btn btn-success')); ?>
+    <?php echo Html::anchor('user/work', '分工合作', array('class' => 'btn btn-success')); ?>
+    <?php echo Html::anchor('user/suggest', '需求建议', array('class' => 'btn btn-success')); ?>
         <?php endif;?>
 		<div class="col-md-12">
 			<h1><?php echo $title; ?></h1>

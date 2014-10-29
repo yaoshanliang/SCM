@@ -193,4 +193,16 @@ class Controller_User extends Controller_Common
 
 	}
 
+    public function action_work()
+    {
+        $this->template->title = "Cooperation";
+        $this->template->content = View::forge('user/work');
+    }
+
+    public function action_suggest()
+    {
+        $this->template->title = "Suggestion";
+        $this->template->content = View::forge('user/suggest');
+    }
+
 }
