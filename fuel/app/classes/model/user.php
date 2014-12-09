@@ -10,6 +10,7 @@ class Model_User extends Model
 		'birthday',
 		'education',
 		'hobbies',
+		'class',
 		'created_at',
 		'updated_at',
 	);
@@ -43,7 +44,8 @@ class Model_User extends Model
 		$val->add_field('birthday', 'Birthday', 'required|valid_string[numeric]');
 		$val->add_field('education', 'Education', 'required|valid_string[numeric]');
 		$val->add_field('hobbies', 'Hobbies', 'required|max_length[255]');
-
+		
+		$val->add_field('class', 'Class', 'required|max_length[255]');
 		return $val;
 	}
 

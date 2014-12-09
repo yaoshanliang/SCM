@@ -38,6 +38,10 @@
                 <?php echo Form::textarea('hobbies', Input::post('hobbies', isset($user) ? $user->hobbies : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Hobbies', 'rows' => 6, 'cols' => 8));?>
 		</div>
 		<div class="form-group">
+			<?php echo Form::label('班级', 'class', array('class'=>'control-label')); ?>
+                <?php echo Form::input('class', Input::post('class', isset($user) ? $user->class : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Class'));?>
+		</div>
+		<div class="form-group">
 			<label class='control-label'>&nbsp;</label>
 			<?php echo Form::submit('submit', '保存', array('class' => 'btn btn-primary')); ?>		</div>
 	</fieldset>

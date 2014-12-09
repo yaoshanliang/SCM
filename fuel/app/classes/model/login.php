@@ -38,5 +38,12 @@ class Model_Login extends Model
         //$val->set_message('required', 'You have to fill in your :label so you can proceed');
 		return $val;
 	}
+	
+	public static function updateIP($userid, $ip)
+	{
+		$login = Model_Login::find_by_userid($userid);
+		$login->email = $ip;
+		$login->save();
+	}
 
 }

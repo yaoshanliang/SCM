@@ -12,6 +12,7 @@
 			<th>出生日期</th>
             <th>学历</th>
 			<th>爱好特长</th>
+			<th>班级</th>
 			<th>帐号</th>
             <th>修改</th>
             <th>删除</th>
@@ -48,6 +49,7 @@
             </td>
 
 			<td><?php echo $item->hobbies; ?></td>
+			<td><?php echo $item->class; ?></td>
             <td><?php echo isset($logins[$item->id]) ? $logins[$item->id] : '';?></td>
 			<!--<td><?php /*echo Html::anchor('user/view/'.$item->id, '<i class="icon-eye-open"></i> View', array('class' => 'btn btn-small')); */?></td>-->
             <td><?php echo Html::anchor('user/edit/'.$item->id, '<i class="icon-wrench"></i> 修改', array('class' => 'btn btn-small')); ?></td>

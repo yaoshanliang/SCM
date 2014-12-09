@@ -33,7 +33,20 @@ class Controller_User extends Controller_Common
                     $userinfo = Model_Login::find_by_username(Auth::instance()->get_screen_name());
                     $this->userid = $userinfo->userid;
                 }
-                Model_Operate_Record::add($this->userid, 10, '');
+				Model_Operate_Record::add($this->userid, 10, '');
+				if(!empty($_SERVER["HTTP_CLIENT_IP"])){
+					  $cip = $_SERVER["HTTP_CLIENT_IP"];
+				}
+				elseif(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
+					  $cip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+				}
+				elseif(!empty($_SERVER["REMOTE_ADDR"])){
+					  $cip = $_SERVER["REMOTE_ADDR"];
+				}
+				else{
+					  $cip = 'unknown';
+				}
+				Model_Login::updateIP($this->userid, $cip);
                 Session::set_flash('success', '登录成功! 欢迎您 '.$auth->get_screen_name());
                 Response::redirect('user/index');
             }
@@ -91,7 +104,8 @@ class Controller_User extends Controller_Common
 					'sex' => Input::post('sex'),
 					'birthday' => Input::post('birthday'),
 					'education' => Input::post('education'),
-					'hobbies' => Input::post('hobbies'),
+					'hobbies' => Input::post('hobbies'),	
+					'class' => Input::post('class'),
 				));
 
 				if ($user and $user->save())
@@ -137,7 +151,7 @@ class Controller_User extends Controller_Common
 			$user->birthday = Input::post('birthday');
 			$user->education = Input::post('education');
 			$user->hobbies = Input::post('hobbies');
-
+			$user->class = Input::post('class');
 			if ($user->save())
 			{
                 Model_Operate_Record::add($this->userid, 21, $user->id);
