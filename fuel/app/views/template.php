@@ -43,7 +43,7 @@
 <?php echo $content; ?>
 		</div>
 		<footer>
-            <p class="pull-right">Copyright © 2014 Powered by iat. All Rights Reserved</p>
+            <p class="pull-right">Copyright © 2014 Powered by G2. All Rights Reserved</p>
 			<!--<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
 			<p>
 				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
